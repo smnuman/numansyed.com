@@ -1,0 +1,114 @@
+.header {
+  background-color: var(--header-bg);
+  padding: 1rem 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  transition: background-color 0.3s ease;
+}
+
+.headerContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: var(--text-color);
+  text-decoration: none;
+}
+
+.logo .numan {
+  color: var(--numan-color);
+}
+
+.logo .syed {
+  color: var(--syed-color);
+}
+
+.logo .com {
+  color: var(--text-color); /* Or a neutral color */
+  font-size: 1.2rem; /* Slightly smaller */
+}
+
+
+.nav {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.navLink {
+  color: var(--text-color);
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: color 0.2s ease-in-out;
+}
+
+.navLink:hover,
+.navLink.active { /* You might need to implement active class logic with NavLink */
+  color: var(--primary-color);
+}
+
+.themeToggle {
+  background-color: var(--primary-color);
+  color: var(--background-color);
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.themeToggle:hover {
+  opacity: 0.9;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .headerContainer {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .nav {
+    margin-top: 0.5rem;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .logo {
+    font-size: 1.5rem;
+  }
+
+  .navLink {
+    font-size: 0.9rem;
+  }
+
+  .themeToggle {
+    margin-top: 0.5rem;
+    width: 100px; /* Fixed width for better layout */
+    align-self: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .nav {
+    gap: 0.8rem;
+  }
+  .navLink {
+    font-size: 0.85rem;
+  }
+  .logo .com {
+    display: block; /* Stack .com under name on very small screens */
+    font-size: 1rem;
+    text-align: center;
+  }
+}

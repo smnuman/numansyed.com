@@ -1,0 +1,22 @@
+.footer {
+  background-color: var(--footer-bg);
+  color: var(--footer-text-color);
+  padding: 2rem 0;
+  text-align: center;
+  margin-top: auto; /* Pushes footer to the bottom */
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.footer p {
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.footer a.inspiredLink {
+  color: var(--primary-color);
+  text-decoration: underline;
+}
+
+.footer a.inspiredLink:hover {
+  color: var(--link-color);
+}

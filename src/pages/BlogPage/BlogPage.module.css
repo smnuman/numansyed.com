@@ -1,0 +1,90 @@
+.blogPage {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+.pageTitle {
+  font-size: 2.5rem;
+  color: var(--primary-color);
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+
+.pageSubtitle {
+  font-size: 1.1rem;
+  color: var(--secondary-color);
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.postList {
+  display: grid;
+  gap: 2rem;
+}
+
+.postItem {
+  background-color: var(--card-bg);
+  padding: 1.5rem 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.07);
+  border: 1px solid var(--border-color);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.postItem:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.postTitle {
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+}
+
+.postTitle a {
+  color: var(--text-color);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.postTitle a:hover {
+  color: var(--primary-color);
+}
+
+.postMeta {
+  font-size: 0.9rem;
+  color: var(--secondary-color);
+  margin-bottom: 0.75rem;
+}
+
+.postExcerpt {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--text-color);
+  margin-bottom: 1rem;
+}
+
+.readMoreLink {
+  display: inline-block;
+  color: var(--link-color);
+  font-weight: bold;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.readMoreLink:hover {
+  color: var(--primary-color);
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .pageTitle {
+    font-size: 2rem;
+  }
+  .postTitle {
+    font-size: 1.5rem;
+  }
+  .postItem {
+    padding: 1.2rem 1.5rem;
+  }
+}

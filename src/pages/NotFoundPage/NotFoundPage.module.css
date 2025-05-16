@@ -1,0 +1,57 @@
+.notFoundPage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 3rem 1rem;
+  min-height: calc(100vh - 160px); /* Adjust based on header/footer height */
+}
+
+.errorCode {
+  font-size: 6rem;
+  font-weight: bold;
+  color: var(--primary-color);
+  margin-bottom: 0.5rem;
+  line-height: 1;
+}
+
+.errorMessage {
+  font-size: 2rem;
+  color: var(--text-color);
+  margin-bottom: 1rem;
+}
+
+.errorDescription {
+  font-size: 1.1rem;
+  color: var(--secondary-color);
+  margin-bottom: 2rem;
+  max-width: 500px;
+}
+
+.homeLink {
+  display: inline-block;
+  padding: 0.8rem 1.8rem;
+  background-color: var(--primary-color);
+  color: var(--background-color);
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: 500;
+  transition: background-color 0.2s ease;
+}
+
+.homeLink:hover {
+  opacity: 0.9;
+}
+
+@media (max-width: 768px) {
+  .errorCode {
+    font-size: 4.5rem;
+  }
+  .errorMessage {
+    font-size: 1.5rem;
+  }
+  .errorDescription {
+    font-size: 1rem;
+  }
+}

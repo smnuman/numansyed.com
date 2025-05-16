@@ -1,0 +1,125 @@
+.reviewsPage {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+.pageTitle {
+  font-size: 2.5rem;
+  color: var(--primary-color);
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+
+.pageSubtitle {
+  font-size: 1.1rem;
+  color: var(--secondary-color);
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.reviewList {
+  display: grid;
+  gap: 2rem;
+}
+
+.reviewItem {
+  background-color: var(--card-bg);
+  padding: 1.5rem 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.07);
+  border: 1px solid var(--border-color);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.reviewItem:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.reviewTitle {
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+  color: var(--text-color);
+}
+
+.reviewTitle a {
+  color: var(--text-color);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.reviewTitle a:hover {
+  color: var(--primary-color);
+}
+
+.reviewMeta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.9rem;
+  color: var(--secondary-color);
+  margin-bottom: 0.75rem;
+  flex-wrap: wrap; /* Allow wrapping on small screens */
+  gap: 0.5rem; /* Space between items if they wrap */
+}
+
+.reviewCategory {
+  background-color: var(--primary-color);
+  color: var(--background-color);
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
+.reviewRating {
+  color: #f8b400; /* Star color */
+}
+
+.reviewExcerpt {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--text-color);
+  margin-bottom: 1rem;
+}
+
+.reviewDate {
+  font-size: 0.85rem;
+  color: var(--secondary-color);
+  margin-top: 0.5rem;
+  text-align: right;
+}
+
+.readMoreLink {
+  display: inline-block;
+  margin-top: 1rem;
+  color: var(--link-color);
+  font-weight: bold;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.readMoreLink:hover {
+  color: var(--primary-color);
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .pageTitle {
+    font-size: 2rem;
+  }
+  .reviewTitle {
+    font-size: 1.5rem;
+  }
+  .reviewItem {
+    padding: 1.2rem 1.5rem;
+  }
+  .reviewMeta {
+    flex-direction: column; /* Stack meta items */
+    align-items: flex-start;
+  }
+  .reviewDate {
+    text-align: left;
+    margin-top: 0.75rem;
+  }
+}

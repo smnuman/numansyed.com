@@ -1,0 +1,104 @@
+.reviewDetailPage {
+  padding: 2rem;
+  max-width: 800px;
+  margin: 0 auto;
+  background-color: var(--card-bg-color); /* Use themed card background */
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  transition: background-color 0.3s ease;
+}
+
+.reviewImageHeader {
+  width: 100%;
+  max-height: 400px;
+  overflow: hidden;
+  border-radius: 8px 8px 0 0;
+  margin-bottom: 2rem;
+  background-color: var(--border-color); /* Use border color as placeholder bg */
+  transition: background-color 0.3s ease;
+}
+
+.reviewImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.reviewProductName {
+  font-size: 2.2rem;
+  color: var(--primary-color); /* Use primary color */
+  margin-bottom: 0.75rem;
+  line-height: 1.2;
+  transition: color 0.3s ease;
+}
+
+.reviewMeta {
+  font-size: 0.9rem;
+  color: var(--text-secondary-color); /* Use secondary text color */
+  margin-bottom: 2rem;
+  display: flex;
+  flex-wrap: wrap; /* Allow wrapping on small screens */
+  gap: 0.5rem 1.5rem; /* Spacing between meta items */
+  transition: color 0.3s ease;
+}
+
+.reviewCategory,
+.reviewDate,
+.reviewRating {
+  display: block; /* Or inline-block if preferred */
+}
+
+.reviewRating {
+  color: var(--secondary-color); /* Use secondary orange for rating */
+  transition: color 0.3s ease;
+}
+
+.reviewFullContent {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: var(--text-color); /* Main text color */
+  transition: color 0.3s ease;
+}
+
+.reviewFullContent p {
+  margin-bottom: 1.5rem;
+}
+
+.reviewFullContent h2 {
+  font-size: 1.8rem;
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+  color: var(--primary-color); /* Use primary color */
+  transition: color 0.3s ease;
+}
+
+.reviewFullContent h3 {
+  font-size: 1.5rem;
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+  color: var(--secondary-color); /* Use secondary color for H3 */
+  transition: color 0.3s ease;
+}
+
+.backLinkContainer {
+  margin-top: 3rem;
+  text-align: center;
+}
+
+.backLink {
+  color: var(--secondary-color); /* Use secondary color */
+  text-decoration: none;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--secondary-color); /* Border with secondary color */
+  border-radius: 4px;
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.backLink:hover {
+  background-color: var(--secondary-color);
+  color: var(--bg-color); /* Text color to contrast with secondary color */
+  text-decoration: none;
+}

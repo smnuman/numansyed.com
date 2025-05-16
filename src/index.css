@@ -1,0 +1,170 @@
+/* Import Google Font - Inter */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+/* Basic CSS Resets and Global Styles */
+[data-theme='light'] {
+  /* Primary Blue Palette */
+  --primary-color: #007bff; /* Main blue for accents, text */
+  --primary-color-darker: #0056b3; /* Darker blue for hover states or secondary elements */
+  --primary-color-lighter: #66b3ff; /* Lighter blue for highlights */
+
+  /* Secondary Orange Palette */
+  --secondary-color: #fd7e14; /* Main orange for CTAs, accents */
+  --secondary-color-darker: #e66a00; /* Darker orange for hover states */
+  --secondary-color-lighter: #ffaa70; /* Lighter orange for highlights */
+
+  /* Neutral & Text Colors */
+  --bg-color: #f8f9fa; /* Off-white/very light gray for main background */
+  --card-bg-color: #ffffff; /* White for cards or distinct sections */
+  --border-color: #dee2e6; /* Light gray for borders */
+  --text-color: #212529; /* Dark gray for primary text */
+  --text-secondary-color: #495057; /* Medium gray for secondary text */
+  --link-color: var(--primary-color);
+  --link-hover-color: var(--primary-color-darker);
+
+  /* Brand Name Colors */
+  --brand-name-numan: #0056b3; /* Using primary-color-darker for Numan */
+  --brand-name-syed: #007bff;  /* Using primary-color for Syed */
+  --brand-name-dot: var(--text-color); /* Color for the ".com" part */
+}
+
+:root, /* Default to light theme */
+[data-theme='light'] {
+  /* Primary Blue Palette */
+  --primary-color: #007bff;
+  --primary-color-darker: #0056b3;
+  --primary-color-lighter: #66b3ff;
+
+  /* Secondary Orange Palette */
+  --secondary-color: #fd7e14; /* Main orange */
+  --secondary-color-darker: #e66a00;
+  --secondary-color-lighter: #ffaa70;
+
+  /* Neutral & Text Colors */
+  --bg-color: #f8f9fa;
+  --card-bg-color: #ffffff;
+  --border-color: #dee2e6;
+  --text-color: #212529;
+  --text-secondary-color: #495057;
+  --link-color: var(--primary-color);
+  --link-hover-color: var(--primary-color-darker);
+
+  /* Brand Name Colors */
+  --brand-name-numan-light: #0056b3;
+  --brand-name-syed-light: #007bff;
+  --brand-name-numan-dark: #7bb4ff; /* Lighter blue for dark mode */
+  --brand-name-syed-dark: #a8cfff;  /* Even lighter blue for dark mode */
+  --brand-name-numan: var(--brand-name-numan-light);
+  --brand-name-syed: var(--brand-name-syed-light);
+  --brand-name-dot: var(--text-color);
+}
+
+[data-theme='dark'] {
+  /* Primary Blue Palette */
+  --primary-color: #7bb4ff; /* Lighter blue for dark mode text/accents */
+  --primary-color-darker: #a8cfff; /* Even lighter blue for hover/secondary elements */
+  --primary-color-lighter: #4a8cff; /* A slightly more saturated light blue */
+
+  /* Secondary Orange Palette */
+  --secondary-color: #ff8c37; /* Vibrant orange for CTAs, accents */
+  --secondary-color-darker: #ffaa70; /* Lighter orange for hover states */
+  --secondary-color-lighter: #ffd1b3; /* Very light orange for highlights */
+
+  /* Neutral & Text Colors */
+  --bg-color: #121212; /* Dark charcoal for main background */
+  --card-bg-color: #1e1e1e; /* Slightly lighter dark gray for cards */
+  --border-color: #333333; /* Dark gray for borders */
+  --text-color: #e0e0e0; /* Light gray for primary text */
+  --text-secondary-color: #a0a0a0; /* Medium light gray for secondary text */
+  --link-color: var(--primary-color);
+  --link-hover-color: var(--primary-color-darker);
+
+  /* Brand Name Colors */
+  --brand-name-numan: var(--brand-name-numan-dark);
+  --brand-name-syed: var(--brand-name-syed-dark);
+  --brand-name-dot: var(--text-color);
+}
+
+:root {
+  /* Default to light theme colors - these will be overridden by [data-theme] */
+  --primary-color: #007bff;
+  --secondary-color: #fd7e14;
+  --bg-color: #f8f9fa;
+  --text-color: #212529;
+  --link-color: var(--primary-color);
+  --link-hover-color: #0056b3; /* primary-color-darker equivalent */
+
+  /* Brand Name Colors (Light theme defaults) */
+  --brand-name-numan-light: #0056b3;
+  --brand-name-syed-light: #007bff;
+  --brand-name-numan-dark: #7bb4ff;
+  --brand-name-syed-dark: #a8cfff;
+
+  /* Font Variables */
+  --font-family-sans-serif: 'Inter', system-ui, Avenir, Helvetica, Arial, sans-serif;
+  --font-weight-normal: 400;
+  --font-weight-bold: 700;
+  --line-height-base: 1.6;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px; /* Base font size */
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-family-sans-serif);
+  font-weight: var(--font-weight-normal);
+  line-height: var(--line-height-base);
+  color: var(--text-color);
+  background-color: var(--bg-color);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+a {
+  color: var(--link-color);
+  text-decoration: none;
+  transition: color 0.2s ease-in-out;
+}
+
+a:hover {
+  color: var(--link-hover-color);
+  text-decoration: underline;
+}
+
+img,
+video {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: var(--font-weight-bold);
+  line-height: 1.3;
+  margin-bottom: 0.75rem;
+}
+
+/* Basic structure for App.jsx main content area */
+main {
+  flex-grow: 1; /* Allows footer to stick to bottom if content is short */
+  padding: 1rem; /* Basic padding for content area */
+}
+
+/* Remove default list styling for nav potentially */
+nav ul {
+  list-style: none;
+}

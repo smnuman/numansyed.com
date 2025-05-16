@@ -1,0 +1,52 @@
+.notFoundPage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: calc(100vh - 160px); /* Adjust based on Navbar/Footer height */
+  text-align: center;
+  padding: 2rem;
+  background-color: var(--bg-color); /* Use themed background color */
+  transition: background-color 0.3s ease;
+}
+
+.errorCode {
+  font-size: 6rem; /* Or even larger, e.g., 10vw */
+  font-weight: bold;
+  color: var(--secondary-color); /* Use secondary color for error code */
+  margin-bottom: 0.5rem;
+  line-height: 1;
+  transition: color 0.3s ease;
+}
+
+.errorMessage {
+  font-size: 2rem;
+  color: var(--primary-color); /* Use primary color for message */
+  margin-bottom: 1rem;
+  transition: color 0.3s ease;
+}
+
+.errorDescription {
+  font-size: 1.1rem;
+  color: var(--text-secondary-color); /* Use secondary text color */
+  margin-bottom: 2rem;
+  max-width: 500px;
+  transition: color 0.3s ease;
+}
+
+.homeButton {
+  background-color: var(--secondary-color); /* Use secondary color for button */
+  color: var(--bg-color); /* Text color to contrast with button background */
+  padding: 0.8rem 1.8rem;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: background-color 0.3s ease, transform 0.2s ease, color 0.3s ease;
+  display: inline-block;
+}
+
+.homeButton:hover {
+  background-color: var(--secondary-color-darker); /* Darker secondary on hover */
+  transform: translateY(-2px);
+  text-decoration: none;
+}

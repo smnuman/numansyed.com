@@ -1,0 +1,137 @@
+.blogPostPage {
+  padding: 2rem;
+  max-width: 800px; /* Content width for readability */
+  margin: 0 auto;
+  background-color: var(--card-bg-color); /* Use themed card background */
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  transition: background-color 0.3s ease;
+}
+
+.postImageHeader {
+  width: 100%;
+  max-height: 400px; /* Max height for the header image */
+  overflow: hidden;
+  border-radius: 8px 8px 0 0; /* Rounded top corners if image is at the very top */
+  margin-bottom: 2rem;
+}
+
+.postImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.postTitle {
+  font-size: 2.2rem;
+  color: var(--primary-color); /* Use primary color */
+  margin-bottom: 0.75rem;
+  line-height: 1.2;
+  transition: color 0.3s ease;
+}
+
+.postMeta {
+  font-size: 0.9rem;
+  color: var(--text-secondary-color); /* Use secondary text color */
+  margin-bottom: 2rem;
+  transition: color 0.3s ease;
+}
+
+.postMeta span + span {
+  margin-left: 0.75rem;
+}
+
+.postContent {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: var(--text-color); /* Main text color */
+  transition: color 0.3s ease;
+}
+
+.postContent p {
+  margin-bottom: 1.5rem;
+}
+
+.postContent h2 {
+  font-size: 1.8rem;
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+  color: var(--primary-color); /* Use primary color */
+  transition: color 0.3s ease;
+}
+
+.postContent h3 {
+  font-size: 1.5rem;
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+  color: var(--secondary-color); /* Use secondary color for H3 */
+  transition: color 0.3s ease;
+}
+
+.postContent ul,
+.postContent ol {
+  margin-bottom: 1.5rem;
+  padding-left: 1.5rem;
+}
+
+.postContent li {
+  margin-bottom: 0.5rem;
+}
+
+.postContent blockquote {
+  border-left: 4px solid var(--secondary-color); /* Use secondary color for border */
+  padding-left: 1rem;
+  margin: 1.5rem 0;
+  font-style: italic;
+  color: var(--text-secondary-color); /* Use secondary text color */
+  transition: border-color 0.3s ease, color 0.3s ease;
+}
+
+.postContent code {
+  background-color: var(--border-color); /* Use border color for subtle background */
+  color: var(--text-color); /* Match text color */
+  padding: 0.2em 0.4em;
+  border-radius: 3px;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 0.9em;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.postContent pre {
+  background-color: var(--text-color); /* Inverted for code blocks: text color as bg */
+  color: var(--bg-color); /* Background color as text for contrast */
+  padding: 1rem;
+  border-radius: 5px;
+  overflow-x: auto; /* Allow horizontal scrolling for long code lines */
+  margin-bottom: 1.5rem;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.postContent pre code {
+  background-color: transparent;
+  padding: 0;
+  font-size: 0.9em;
+}
+
+.backLinkContainer {
+  margin-top: 3rem;
+  text-align: center;
+}
+
+.backLink {
+  color: var(--secondary-color); /* Use secondary color */
+  text-decoration: none;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--secondary-color); /* Border with secondary color */
+  border-radius: 4px;
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.backLink:hover {
+  background-color: var(--secondary-color);
+  color: var(--bg-color); /* Text color to contrast with secondary color */
+  text-decoration: none;
+}

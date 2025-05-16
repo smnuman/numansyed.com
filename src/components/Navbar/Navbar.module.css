@@ -1,0 +1,139 @@
+.navbar {
+  background-color: var(--primary-color); /* Use new theme variable */
+  padding: 1rem 2rem;
+  color: var(--bg-color); /* Text color should contrast with primary-color */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.navContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: var(--font-weight-bold);
+  color: var(--bg-color); /* Contrast with navbar background */
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.logoNuman {
+  color: var(--brand-name-numan); /* Uses themed variable */
+}
+
+.logoSyed {
+  color: var(--brand-name-syed); /* Uses themed variable */
+}
+
+/* The .com part of the logo will use the .logo color */
+
+/* Theme-specific styles for Navbar, Logo, and NavLinks */
+/* No need for body[data-theme] prefix if variables are correctly applied globally */
+/* However, keeping them can provide specificity if needed, or remove if redundant */
+
+/* Light theme is default, dark theme overrides are below */
+[data-theme='dark'] .navbar {
+  background-color: var(--bg-color); /* Dark theme background */
+  color: var(--text-color); /* Dark theme text */
+}
+
+[data-theme='dark'] .logo {
+  color: var(--text-color); /* Dark theme logo text */
+}
+
+/* logoNuman and logoSyed will use their specific dark theme variables */
+
+[data-theme='dark'] .navLink {
+  color: var(--text-color); /* Dark theme nav link text */
+}
+
+[data-theme='dark'] .navLink:hover {
+  color: var(--primary-color-lighter); /* Lighter blue for hover in dark mode */
+}
+
+[data-theme='dark'] .navLink.active {
+  color: var(--primary-color); /* Primary (brighter) blue for active in dark mode */
+}
+
+[data-theme='dark'] .navLink.active::after {
+  background-color: var(--primary-color);
+}
+
+
+.navLinks {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+  margin: 0;
+  padding: 0;
+}
+
+.navLink {
+  color: var(--bg-color); /* Contrast with navbar background in light mode */
+  text-decoration: none;
+  font-weight: 500;
+  padding: 0.5rem 0;
+  position: relative;
+  transition: color 0.2s ease-in-out;
+}
+
+.navLink:hover {
+  color: var(--primary-color-lighter); /* Lighter blue for hover in light mode */
+  text-decoration: none;
+}
+
+.navLink.active {
+  color: var(--primary-color-lighter); /* Lighter blue for active in light mode */
+  font-weight: var(--font-weight-bold);
+}
+
+.navLink.active::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: var(--primary-color-lighter);
+}
+
+.themeToggleButton {
+  background-color: transparent;
+  color: var(--bg-color); /* Icon color to contrast with navbar bg */
+  border: 1px solid var(--bg-color); /* Border to match icon color */
+  padding: 0.4rem; /* Adjust padding for icon button */
+  border-radius: 50%; /* Make it circular */
+  cursor: pointer;
+  font-size: 1.2rem; /* Adjust if icons appear too small/large */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-color 0.2s ease-in-out;
+  width: 36px; /* Fixed width */
+  height: 36px; /* Fixed height */
+}
+
+.themeToggleButton:hover {
+  background-color: rgba(255, 255, 255, 0.1); /* Subtle hover for light theme */
+  color: var(--primary-color-lighter);
+  border-color: var(--primary-color-lighter);
+}
+
+[data-theme='dark'] .themeToggleButton {
+  color: var(--text-color); /* Icon color for dark theme */
+  border-color: var(--text-color); /* Border color for dark theme */
+}
+
+[data-theme='dark'] .themeToggleButton:hover {
+  background-color: rgba(0, 0, 0, 0.2); /* Subtle hover for dark theme */
+  color: var(--primary-color);
+  border-color: var(--primary-color);
+}

@@ -1,0 +1,94 @@
+.aboutPage {
+  padding: 2rem;
+  max-width: 900px;
+  margin: 0 auto;
+  background-color: var(--card-bg-color); /* Use themed card background */
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  transition: background-color 0.3s ease;
+}
+
+.aboutHeader {
+  text-align: center;
+  margin-bottom: 3rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid var(--border-color); /* Use themed border color */
+  transition: border-bottom-color 0.3s ease;
+}
+
+.profileImage {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 0 auto 1.5rem auto;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  border: 3px solid var(--primary-color); /* Use primary color for border */
+  transition: border-color 0.3s ease;
+}
+
+.aboutHeader h1 {
+  font-size: 2.8rem;
+  color: var(--primary-color); /* Use primary color */
+  margin-bottom: 0.5rem;
+  transition: color 0.3s ease;
+}
+
+.tagline {
+  font-size: 1.2rem;
+  color: var(--text-secondary-color); /* Use secondary text color */
+  font-style: italic;
+  transition: color 0.3s ease;
+}
+
+.aboutContent h2 {
+  font-size: 1.8rem;
+  color: var(--primary-color); /* Use primary color */
+  margin-top: 2.5rem;
+  margin-bottom: 1.2rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--secondary-color); /* Use secondary color for border */
+  display: inline-block; /* So border only spans text width */
+  transition: color 0.3s ease, border-bottom-color 0.3s ease;
+}
+
+.aboutContent p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: var(--text-color); /* Main text color */
+  margin-bottom: 1.5rem;
+  transition: color 0.3s ease;
+}
+
+.skillsList {
+  list-style: none; /* Or 'disc' if preferred */
+  padding-left: 0; /* Remove default padding if no bullets */
+  margin-bottom: 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.skillsList li {
+  background-color: var(--secondary-color-lighter); /* Use lighter secondary color for skill tags */
+  color: var(--text-color); /* Text color for contrast */
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.aboutContent a {
+  color: var(--secondary-color); /* Use secondary color for links */
+  font-weight: 500;
+  text-decoration: underline;
+  transition: color 0.3s ease;
+}
+
+.aboutContent a:hover {
+  color: var(--secondary-color-darker); /* Darker secondary on hover */
+  text-decoration: none;
+}

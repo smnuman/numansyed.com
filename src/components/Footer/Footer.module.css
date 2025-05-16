@@ -1,0 +1,21 @@
+.footer {
+  background-color: var(--card-bg-color); /* Use card background for a distinct section */
+  color: var(--text-secondary-color); /* Use secondary text color for footer */
+  padding: 1.5rem 2rem;
+  text-align: center;
+  margin-top: auto; /* Pushes footer to the bottom if content is short */
+  border-top: 1px solid var(--border-color); /* Add a top border */
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+.footerContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer p {
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+/* Optional styling for social links if added - content removed due to parsing issues */

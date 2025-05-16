@@ -1,0 +1,32 @@
+[
+  {
+    "id": "1",
+    "productName": "The Amazing Smartwatch X2000",
+    "category": "Wearables",
+    "date": "June 01, 2025",
+    "rating": 4.5,
+    "summary": "A feature-packed smartwatch with a sleek design and impressive battery life. Great for fitness tracking and daily use.",
+    "image": "placeholder.jpg",
+    "fullReview": "The Smartwatch X2000 has been my daily driver for the past two weeks, and it's largely impressed me. The display is bright and responsive, and the health tracking features are comprehensive. Battery life easily lasts two full days with moderate use. The companion app could be a bit more polished, but overall, it's a solid contender in the smartwatch market."
+  },
+  {
+    "id": "2",
+    "productName": "Pro Code Editor Deluxe",
+    "category": "Software",
+    "date": "June 05, 2025",
+    "rating": 5,
+    "summary": "An incredibly powerful and customizable code editor that has significantly boosted my productivity. A must-have for developers.",
+    "image": "placeholder.jpg",
+    "fullReview": "I've tried many code editors over the years, but Pro Code Editor Deluxe stands out. Its intelligent code completion, vast extension ecosystem, and blazing fast performance make coding a joy. The learning curve for advanced features is a bit steep, but the investment is well worth it for the productivity gains."
+  },
+  {
+    "id": "3",
+    "productName": "Wireless Noise-Cancelling Headphones Z",
+    "category": "Audio",
+    "date": "June 10, 2025",
+    "rating": 4,
+    "summary": "Excellent noise cancellation and comfortable fit, but the sound signature might not be for everyone.",
+    "image": "placeholder.jpg",
+    "fullReview": "These headphones offer top-tier noise cancellation, making them perfect for travel or noisy environments. They are very comfortable for long listening sessions. However, the audio is a bit bass-heavy, which might not appeal to audiophiles seeking a neutral sound. Build quality is good, but the included carrying case feels a bit cheap for the price."
+  }
+]

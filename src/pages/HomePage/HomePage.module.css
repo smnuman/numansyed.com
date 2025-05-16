@@ -1,0 +1,154 @@
+.homePage {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.heroSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 3rem 1rem;
+  background-color: var(--card-bg-color); /* Use card background for hero */
+  border-radius: 8px;
+  margin-bottom: 3rem;
+  transition: background-color 0.3s ease;
+}
+
+.heroText h1 {
+  font-size: 2.8rem;
+  color: var(--primary-color); /* Use primary color for heading */
+  margin-bottom: 1rem;
+  transition: color 0.3s ease;
+}
+
+.heroText p {
+  font-size: 1.2rem;
+  color: var(--text-secondary-color); /* Use secondary text color */
+  margin-bottom: 2rem;
+  max-width: 600px;
+  transition: color 0.3s ease;
+}
+
+.ctaButton {
+  background-color: var(--secondary-color); /* Use secondary color for primary CTA */
+  color: var(--bg-color); /* Text color to contrast with secondary color */
+  padding: 0.8rem 1.8rem;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: background-color 0.3s ease, transform 0.2s ease, color 0.3s ease;
+  margin: 0.5rem;
+  display: inline-block;
+  border: 2px solid transparent;
+}
+
+.ctaButton:hover {
+  background-color: var(--secondary-color-darker);
+  transform: translateY(-2px);
+  text-decoration: none;
+}
+
+.ctaButtonSecondary {
+  background-color: transparent;
+  color: var(--primary-color); /* Use primary color for secondary CTA text */
+  border: 2px solid var(--primary-color); /* Border with primary color */
+}
+
+.ctaButtonSecondary:hover {
+  background-color: var(--primary-color);
+  color: var(--bg-color); /* Text color to contrast with primary color */
+}
+
+.heroImageContainer {
+  margin-top: 2rem;
+  max-width: 600px; /* Adjust as needed */
+  width: 100%;
+}
+
+.heroImage {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+
+/* Features Section */
+.featuresSection {
+  padding: 2rem 0;
+  text-align: center;
+}
+
+.featuresSection h2 {
+  font-size: 2.2rem;
+  color: var(--primary-color); /* Use primary color */
+  margin-bottom: 2.5rem;
+  transition: color 0.3s ease;
+}
+
+.featuresGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.featureCard {
+  background-color: var(--card-bg-color); /* Use themed card background */
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  text-align: left;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+.featureCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.12);
+}
+
+.featureCard h3 {
+  font-size: 1.4rem;
+  color: var(--secondary-color); /* Use secondary color for feature headings */
+  margin-bottom: 0.75rem;
+  transition: color 0.3s ease;
+}
+
+.featureCard p {
+  font-size: 1rem;
+  color: var(--text-secondary-color); /* Use secondary text color */
+  margin-bottom: 1rem;
+  line-height: 1.6;
+  transition: color 0.3s ease;
+}
+
+.featureLink {
+  color: var(--secondary-color); /* Use secondary color for links */
+  font-weight: 500;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.featureLink:hover {
+  text-decoration: underline;
+  color: var(--secondary-color-darker); /* Darker secondary on hover */
+}
+
+/* Responsive adjustments */
+@media (min-width: 768px) {
+  .heroSection {
+    flex-direction: row;
+    text-align: left;
+    gap: 2rem;
+  }
+
+  .heroText {
+    flex: 1;
+  }
+
+  .heroImageContainer {
+    flex: 1;
+    margin-top: 0;
+  }
+}

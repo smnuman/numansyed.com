@@ -1,0 +1,26 @@
+[
+  {
+    "id": "1",
+    "title": "My First Blog Post: The Journey Begins",
+    "date": "May 17, 2025",
+    "excerpt": "An introduction to my new blog and what I plan to share. Exploring the world of web development and beyond.",
+    "image": "/images/blog/placeholder-post1.jpg",
+    "content": "This is the full content of my first blog post. It's exciting to start this new chapter and share my thoughts with the world. I'll be covering topics like React, Node.js, cloud technologies, and perhaps some personal projects."
+  },
+  {
+    "id": "2",
+    "title": "Understanding Framer Motion for Smooth Animations",
+    "date": "May 20, 2025",
+    "excerpt": "A dive into how Framer Motion can elevate your React applications with beautiful and performant animations.",
+    "image": "/images/blog/placeholder-post1.jpg",
+    "content": "Framer Motion is a powerful library for creating animations in React. In this post, we'll explore its core concepts, how to implement common animation patterns, and tips for optimizing performance. Get ready to make your UIs come alive!"
+  },
+  {
+    "id": "3",
+    "title": "Deploying Static Sites with Cloudflare Pages",
+    "date": "May 25, 2025",
+    "excerpt": "A step-by-step guide to deploying your static or Jamstack sites using Cloudflare Pages for speed and reliability.",
+    "image": "/images/blog/placeholder-post1.jpg",
+    "content": "Cloudflare Pages offers a seamless way to deploy websites directly from your Git repository. This article walks through the setup process, custom domain configuration, and some of tribulations of using Cloudflare's global network."
+  }
+]

@@ -7,17 +7,7 @@ const Footer = () => {
     <footer className={styles.footer}>
       <div className="container">
         <p>&copy; {currentYear} NumanSyed.com. All rights reserved.</p>
-        <p>
-          Inspired by{' '}
-          <a
-            href="https://nayeemsyed.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.inspiredLink}
-          >
-            nayeemsyed.com
-          </a>
-        </p>
+        
       </div>
     </footer>
   );

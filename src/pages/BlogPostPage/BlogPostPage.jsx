@@ -10,6 +10,8 @@ const blogPosts = {
     date: 'February 21, 2026',
     author: 'Numan Syed',
     content: `
+      <img src="/images/blog/git-crypt-fix/hero-banner.svg" alt="Decontaminating a Poisoned Git-Crypt Repository — from broken encryption and phantom submodules to a clean, fully synced hierarchy" />
+
       <blockquote>
         <strong>TL;DR:</strong> My dotfiles repo had git-crypt encrypting its own infrastructure files (.gitattributes, .gitmodules, .gitignore), a phantom submodule pointing at itself, and corrupted .gitignore files across the tree. Every <code>grepo</code> command re-poisoned the repo. I fixed it in three phases: encryption decontamination, submodule restructure, and branch/remote cleanup. Here are the war stories and the lessons.
       </blockquote>
@@ -47,6 +49,8 @@ const blogPosts = {
 
       <p>Stop and think about that for a second. <code>.gitattributes</code> is the file that <em>tells git how to handle files</em>. We just told git to encrypt <code>.gitattributes</code> itself. Git needs to read <code>.gitattributes</code> to know what to encrypt, but it cannot read it because it is encrypted. A perfect circular dependency.</p>
 
+      <img src="/images/blog/git-crypt-fix/poison-loop.svg" alt="Diagram showing the self-reinforcing poison loop: .gitcrypt feeds gencrypt_setup which writes .gitattributes which breaks git operations, and grepo calls gencrypt_setup again unconditionally" />
+
       <p>But here is the truly insidious part: <strong>it was self-reinforcing</strong>. My <code>grepo</code> utility calls <code>gencrypt_setup</code> unconditionally at line 731. Every time I ran <code>grepo</code> to create a new repository, it would regenerate <code>.gitattributes</code> from the poisoned <code>.gitcrypt</code> manifest, re-injecting the poison. Even if I manually fixed <code>.gitattributes</code>, the next <code>grepo</code> would overwrite it.</p>
 
       <h3>The Phantom Submodule</h3>
@@ -54,6 +58,8 @@ const blogPosts = {
       <p>The second problem was a naming collision. My utility function <code>_grepo_name</code> generates repository names using a <code>parent-child</code> format. For <code>~/.config</code>, the parent directory is the username folder and the child is <code>config</code>, so it generates <code>config-zsh</code> (since the repo was originally zsh-centric). But for <code>~/.config/zsh</code>, the parent is <code>config</code> and the child is <code>zsh</code>, which also generates... <code>config-zsh</code>.</p>
 
       <p>Both the root and <code>zsh/</code> mapped to the same GitHub repo name. When <code>gsub</code> was run to register <code>zsh/</code> as a submodule, it pointed at the root's own remote URL. Git dutifully recorded this in <code>.gitmodules</code>. The result: a submodule entry that refers to itself. <code>git submodule status</code> showed <code>-07bf731...</code> with the minus prefix meaning "not initialized" -- because git cannot initialize a submodule that points at its own repository.</p>
+
+      <img src="/images/blog/git-crypt-fix/submodule-phantom.svg" alt="Diagram showing the phantom submodule: root and zsh/ both resolve to config-zsh via _grepo_name, creating a circular self-reference" />
 
       <h3>The .gitignore Corruption</h3>
 
@@ -89,6 +95,8 @@ nomad/*</code></pre>
       <p>Finally, I ran <code>git-crypt status -f</code> to force-fix the encryption state. This re-staged <code>.gitconfig</code> through the encryption filter. There was one gotcha: <code>git-crypt status -f</code> internally runs <code>git add</code> without the <code>-f</code> flag, so it silently skipped gitignored files like <code>nomad/</code>. I had to manually <code>git add -f nomad/</code> to fix those.</p>
 
       <p>Result: zero warnings. All infrastructure files plaintext. All sensitive files properly encrypted.</p>
+
+      <img src="/images/blog/git-crypt-fix/hero-tangled.jpg" alt="Tangled cables representing the messy state of the repository before the fix" />
 
       <h2>Phase B: Submodule Restructure</h2>
 
@@ -157,6 +165,12 @@ gh api -X PUT repos/smnuman/dotconfig/branches/main/protection \\
     prompt/                   -&gt; smnuman/zsh-prompt.git        [submodule]</code></pre>
 
       <p>All 5 repositories on <code>main</code>, tracking <code>origin/main</code>, fully synced. Zero detached HEADs. Zero missing remotes. Zero uncommitted changes.</p>
+
+      <img src="/images/blog/git-crypt-fix/repo-hierarchy.svg" alt="Final repository hierarchy diagram showing all 5 repos properly connected and on main" />
+
+      <img src="/images/blog/git-crypt-fix/before-after.svg" alt="Before and after comparison: 8 problems on the left in red, 8 fixes on the right in green" />
+
+      <img src="/images/blog/git-crypt-fix/hero-server-clean.jpg" alt="Clean organized server infrastructure representing the restored state of the repository" />
 
       <h2>Lessons Learned</h2>
 

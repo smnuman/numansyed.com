@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 520" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif">
+  <defs>
+    <linearGradient id="bgBA" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1e293b;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <rect width="800" height="520" rx="12" fill="url(#bgBA)"/>
+
+  <!-- BEFORE side -->
+  <rect x="20" y="20" width="370" height="480" rx="10" fill="#1a0a0a" stroke="#dc2626" stroke-width="1.5" opacity="0.8"/>
+  <text x="205" y="52" text-anchor="middle" fill="#fca5a5" font-size="14" font-weight="700" letter-spacing="1.5">BEFORE</text>
+
+  <!-- Before items -->
+  <g transform="translate(40, 70)">
+    <circle cx="10" cy="10" r="6" fill="#dc2626"/>
+    <text x="24" y="14" fill="#fca5a5" font-size="11" font-weight="600">Root: config-zsh.git</text>
+    <text x="24" y="30" fill="#7f1d1d" font-size="10">Wrong name, same as zsh/ remote</text>
+
+    <circle cx="10" cy="60" r="6" fill="#dc2626"/>
+    <text x="24" y="64" fill="#fca5a5" font-size="11" font-weight="600">.gitcrypt: 8 patterns (6 poisoned)</text>
+    <text x="24" y="80" fill="#7f1d1d" font-size="10">.git*, .gitattributes, .gitmodules encrypted</text>
+
+    <circle cx="10" cy="110" r="6" fill="#dc2626"/>
+    <text x="24" y="114" fill="#fca5a5" font-size="11" font-weight="600">zsh/ submodule: PHANTOM</text>
+    <text x="24" y="130" fill="#7f1d1d" font-size="10">Points to itself (circular reference)</text>
+
+    <circle cx="10" cy="160" r="6" fill="#dc2626"/>
+    <text x="24" y="164" fill="#fca5a5" font-size="11" font-weight="600">brew/: NO REMOTE</text>
+    <text x="24" y="180" fill="#7f1d1d" font-size="10">No commits, corrupted .gitignore</text>
+
+    <circle cx="10" cy="210" r="6" fill="#dc2626"/>
+    <text x="24" y="214" fill="#fca5a5" font-size="11" font-weight="600">git-utils/: DETACHED HEAD</text>
+    <text x="24" y="230" fill="#7f1d1d" font-size="10">Uncommitted work floating</text>
+
+    <circle cx="10" cy="260" r="6" fill="#dc2626"/>
+    <text x="24" y="264" fill="#fca5a5" font-size="11" font-weight="600">prompt/: DETACHED HEAD</text>
+    <text x="24" y="280" fill="#7f1d1d" font-size="10">Behind main by 15 files</text>
+
+    <circle cx="10" cy="310" r="6" fill="#dc2626"/>
+    <text x="24" y="314" fill="#fca5a5" font-size="11" font-weight="600">.gitignore files: CORRUPTED</text>
+    <text x="24" y="330" fill="#7f1d1d" font-size="10">_gisolate wrote * / !.gitignore</text>
+
+    <circle cx="10" cy="360" r="6" fill="#dc2626"/>
+    <text x="24" y="364" fill="#fca5a5" font-size="11" font-weight="600">grepo: BROKEN</text>
+    <text x="24" y="380" fill="#7f1d1d" font-size="10">Every run re-poisons encryption</text>
+  </g>
+
+  <!-- AFTER side -->
+  <rect x="410" y="20" width="370" height="480" rx="10" fill="#0a1a0a" stroke="#22c55e" stroke-width="1.5" opacity="0.8"/>
+  <text x="595" y="52" text-anchor="middle" fill="#86efac" font-size="14" font-weight="700" letter-spacing="1.5">AFTER</text>
+
+  <!-- After items -->
+  <g transform="translate(430, 70)">
+    <circle cx="10" cy="10" r="6" fill="#22c55e"/>
+    <text x="24" y="14" fill="#86efac" font-size="11" font-weight="600">Root: dotconfig.git</text>
+    <text x="24" y="30" fill="#166534" font-size="10">Unique name, no collision</text>
+
+    <circle cx="10" cy="60" r="6" fill="#22c55e"/>
+    <text x="24" y="64" fill="#86efac" font-size="11" font-weight="600">.gitcrypt: 2 patterns (clean)</text>
+    <text x="24" y="80" fill="#166534" font-size="10">.gitconfig + nomad/* only</text>
+
+    <circle cx="10" cy="110" r="6" fill="#22c55e"/>
+    <text x="24" y="114" fill="#86efac" font-size="11" font-weight="600">zsh/ submodule: PROPER</text>
+    <text x="24" y="130" fill="#166534" font-size="10">Own repo, own remote, registered correctly</text>
+
+    <circle cx="10" cy="160" r="6" fill="#22c55e"/>
+    <text x="24" y="164" fill="#86efac" font-size="11" font-weight="600">brew/: CONNECTED</text>
+    <text x="24" y="180" fill="#166534" font-size="10">Remote set, history restored, content pushed</text>
+
+    <circle cx="10" cy="210" r="6" fill="#22c55e"/>
+    <text x="24" y="214" fill="#86efac" font-size="11" font-weight="600">git-utils/: ON MAIN</text>
+    <text x="24" y="230" fill="#166534" font-size="10">Local work committed and pushed</text>
+
+    <circle cx="10" cy="260" r="6" fill="#22c55e"/>
+    <text x="24" y="264" fill="#86efac" font-size="11" font-weight="600">prompt/: ON MAIN</text>
+    <text x="24" y="280" fill="#166534" font-size="10">Synced with latest cumulative update</text>
+
+    <circle cx="10" cy="310" r="6" fill="#22c55e"/>
+    <text x="24" y="314" fill="#86efac" font-size="11" font-weight="600">.gitignore files: FIXED</text>
+    <text x="24" y="330" fill="#166534" font-size="10">_gisolate corruption removed</text>
+
+    <circle cx="10" cy="360" r="6" fill="#22c55e"/>
+    <text x="24" y="364" fill="#86efac" font-size="11" font-weight="600">grepo: SAFE</text>
+    <text x="24" y="380" fill="#166534" font-size="10">No more poison patterns to regenerate</text>
+  </g>
+</svg>

@@ -25,16 +25,15 @@ const HomePage = () => {
         {/* Placeholder for recent posts - will be dynamic later */}
         <div className={styles.postGrid}>
           <div className={styles.postCard}>
+            <h3>Decontaminating a Poisoned Git-Crypt Repo</h3>
+            <p>A war story about git-crypt encrypting its own infrastructure, phantom submodules, and three phases of surgical repair...</p>
+            <Link to="/blog/git-crypt-decontamination-submodule-restructure" className={styles.readMore}>Read More &rarr;</Link>
+          </div>
+          <div className={styles.postCard}>
             <h3>Building This Website with React & Vite</h3>
             <p>A quick look into the tools and techniques used to create numansyed.com...</p>
             <Link to="/blog/building-this-website" className={styles.readMore}>Read More &rarr;</Link>
           </div>
-          <div className={styles.postCard}>
-            <h3>The Importance of Dark Mode</h3>
-            <p>Why every modern website should consider a dark theme option for user comfort...</p>
-            <Link to="/blog/importance-of-dark-mode" className={styles.readMore}>Read More &rarr;</Link>
-          </div>
-          {/* Add more placeholder posts if needed */}
         </div>
         <Link to="/blog" className={styles.viewAllPosts}>View All Posts</Link>
       </section>

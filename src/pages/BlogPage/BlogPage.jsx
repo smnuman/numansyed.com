@@ -2,8 +2,13 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import styles from './BlogPage.module.css';
 
-// Dummy blog post data
 const blogPosts = [
+  {
+    slug: 'git-crypt-decontamination-submodule-restructure',
+    title: 'How I Decontaminated a Poisoned Git-Crypt Repo and Rebuilt My Entire Dotfiles Hierarchy',
+    date: 'February 21, 2026',
+    excerpt: 'A war story about git-crypt encrypting its own infrastructure files, a phantom self-referencing submodule, and three phases of surgical repair across five interconnected repositories.',
+  },
   {
     slug: 'building-this-website',
     title: 'Building This Website with React & Vite',
@@ -22,7 +27,6 @@ const blogPosts = [
     date: 'May 15, 2025',
     excerpt: 'Ensuring your website looks and functions great on all devices, from desktops to smartphones, is crucial. Here are some key principles.',
   },
-  // Add more posts as needed
 ];
 
 const BlogPage = () => {

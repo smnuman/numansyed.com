@@ -1,20 +1,20 @@
+/* App layout */
 .app-container {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  background-color: var(--background-color);
-  color: var(--text-color);
+  background-color: var(--color-bg);
+  color: var(--color-text-primary);
+  transition: background-color var(--transition-normal), color var(--transition-normal);
 }
 
 main {
   flex-grow: 1;
-  padding-top: 80px; /* Adjust based on header height */
-  padding-bottom: 20px;
+  padding-top: 60px;
 }
 
-/* Responsive adjustments */
 @media (max-width: 768px) {
   main {
-    padding-top: 70px; /* Adjust for smaller screens if header height changes */
+    padding-top: 56px; /* Smaller header on mobile */
   }
 }

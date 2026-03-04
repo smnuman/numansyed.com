@@ -1,57 +1,68 @@
+/* Medium-style 404 page */
 .notFoundPage {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding: 3rem 1rem;
-  min-height: calc(100vh - 160px); /* Adjust based on header/footer height */
+  padding: var(--space-3xl) var(--space-lg);
+  min-height: calc(100vh - 130px);
 }
 
 .errorCode {
-  font-size: 6rem;
-  font-weight: bold;
-  color: var(--primary-color);
-  margin-bottom: 0.5rem;
+  font-family: var(--font-serif);
+  font-size: 8rem;
+  font-weight: 700;
+  color: var(--color-text-tertiary);
   line-height: 1;
+  margin-bottom: var(--space-md);
+  letter-spacing: -2px;
 }
 
 .errorMessage {
-  font-size: 2rem;
-  color: var(--text-color);
-  margin-bottom: 1rem;
+  font-family: var(--font-serif);
+  font-size: var(--text-2xl);
+  font-weight: 600;
+  color: var(--color-text-primary);
+  margin-bottom: var(--space-sm);
 }
 
 .errorDescription {
-  font-size: 1.1rem;
-  color: var(--secondary-color);
-  margin-bottom: 2rem;
-  max-width: 500px;
+  font-family: var(--font-serif);
+  font-size: var(--text-lg);
+  color: var(--color-text-secondary);
+  margin-bottom: var(--space-xl);
+  max-width: 400px;
+  line-height: var(--leading-normal);
 }
 
 .homeLink {
-  display: inline-block;
-  padding: 0.8rem 1.8rem;
-  background-color: var(--primary-color);
-  color: var(--background-color);
-  text-decoration: none;
-  border-radius: 5px;
+  font-family: var(--font-sans);
+  font-size: var(--text-sm);
   font-weight: 500;
-  transition: background-color 0.2s ease;
+  padding: var(--space-sm) var(--space-lg);
+  background-color: var(--color-accent);
+  color: white;
+  text-decoration: none;
+  border-radius: 99px;
+  transition: background-color var(--transition-fast);
 }
 
 .homeLink:hover {
-  opacity: 0.9;
+  background-color: var(--color-accent-hover);
 }
 
+/* Responsive */
 @media (max-width: 768px) {
   .errorCode {
-    font-size: 4.5rem;
+    font-size: 5rem;
   }
+
   .errorMessage {
-    font-size: 1.5rem;
+    font-size: var(--text-xl);
   }
+
   .errorDescription {
-    font-size: 1rem;
+    font-size: var(--text-base);
   }
 }

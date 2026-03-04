@@ -1,125 +1,139 @@
+/* Medium-style reviews page */
 .reviewsPage {
-  padding-top: 2rem;
-  padding-bottom: 2rem;
+  padding: var(--space-2xl) 0 var(--space-3xl);
+  max-width: var(--width-narrow);
+  margin: 0 auto;
 }
 
 .pageTitle {
-  font-size: 2.5rem;
-  color: var(--primary-color);
-  text-align: center;
-  margin-bottom: 0.5rem;
+  font-family: var(--font-serif);
+  font-size: var(--text-4xl);
+  font-weight: 700;
+  color: var(--color-text-primary);
+  letter-spacing: -0.5px;
+  margin-bottom: var(--space-sm);
 }
 
 .pageSubtitle {
-  font-size: 1.1rem;
-  color: var(--secondary-color);
-  text-align: center;
-  margin-bottom: 2.5rem;
+  font-family: var(--font-sans);
+  font-size: var(--text-base);
+  color: var(--color-text-secondary);
+  margin-bottom: var(--space-2xl);
+  padding-bottom: var(--space-xl);
+  border-bottom: 1px solid var(--color-border);
 }
 
 .reviewList {
-  display: grid;
-  gap: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
 }
 
 .reviewItem {
-  background-color: var(--card-bg);
-  padding: 1.5rem 2rem;
-  border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.07);
-  border: 1px solid var(--border-color);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  padding: var(--space-xl) 0;
+  border-bottom: 1px solid var(--color-border);
 }
 
-.reviewItem:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+.reviewItem:first-child {
+  padding-top: 0;
+}
+
+.reviewItem:last-child {
+  border-bottom: none;
 }
 
 .reviewTitle {
-  font-size: 1.8rem;
-  margin-bottom: 0.5rem;
-  color: var(--text-color);
+  font-family: var(--font-serif);
+  font-size: var(--text-xl);
+  font-weight: 700;
+  line-height: var(--leading-snug);
+  margin-bottom: var(--space-sm);
+  color: var(--color-text-primary);
 }
 
 .reviewTitle a {
-  color: var(--text-color);
+  color: inherit;
   text-decoration: none;
-  transition: color 0.2s ease;
+  transition: color var(--transition-fast);
 }
 
 .reviewTitle a:hover {
-  color: var(--primary-color);
+  color: var(--color-accent);
 }
 
 .reviewMeta {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  font-size: 0.9rem;
-  color: var(--secondary-color);
-  margin-bottom: 0.75rem;
-  flex-wrap: wrap; /* Allow wrapping on small screens */
-  gap: 0.5rem; /* Space between items if they wrap */
+  gap: var(--space-md);
+  margin-bottom: var(--space-sm);
+  flex-wrap: wrap;
 }
 
 .reviewCategory {
-  background-color: var(--primary-color);
-  color: var(--background-color);
-  padding: 0.2rem 0.5rem;
-  border-radius: 4px;
-  font-size: 0.8rem;
-  font-weight: bold;
+  font-family: var(--font-sans);
+  font-size: var(--text-xs);
+  font-weight: 500;
+  color: var(--color-accent);
+  background-color: transparent;
+  padding: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
 .reviewRating {
-  color: #f8b400; /* Star color */
+  font-size: var(--text-sm);
+  color: #f59e0b; /* Warm amber for stars */
 }
 
 .reviewExcerpt {
-  font-size: 1rem;
-  line-height: 1.7;
-  color: var(--text-color);
-  margin-bottom: 1rem;
+  font-family: var(--font-serif);
+  font-size: var(--text-base);
+  color: var(--color-text-secondary);
+  line-height: var(--leading-normal);
+  margin-bottom: var(--space-md);
+  
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 .reviewDate {
-  font-size: 0.85rem;
-  color: var(--secondary-color);
-  margin-top: 0.5rem;
-  text-align: right;
+  font-family: var(--font-sans);
+  font-size: var(--text-xs);
+  color: var(--color-text-tertiary);
 }
 
 .readMoreLink {
-  display: inline-block;
-  margin-top: 1rem;
-  color: var(--link-color);
-  font-weight: bold;
+  font-family: var(--font-sans);
+  font-size: var(--text-sm);
+  color: var(--color-accent);
   text-decoration: none;
-  transition: color 0.2s ease;
+  font-weight: 500;
+  transition: opacity var(--transition-fast);
 }
 
 .readMoreLink:hover {
-  color: var(--primary-color);
-  text-decoration: underline;
+  opacity: 0.8;
 }
 
+/* Responsive */
 @media (max-width: 768px) {
+  .reviewsPage {
+    padding: var(--space-xl) var(--space-md) var(--space-2xl);
+  }
+
   .pageTitle {
-    font-size: 2rem;
+    font-size: var(--text-3xl);
   }
+
   .reviewTitle {
-    font-size: 1.5rem;
+    font-size: var(--text-lg);
   }
-  .reviewItem {
-    padding: 1.2rem 1.5rem;
-  }
+
   .reviewMeta {
-    flex-direction: column; /* Stack meta items */
+    flex-direction: column;
     align-items: flex-start;
-  }
-  .reviewDate {
-    text-align: left;
-    margin-top: 0.75rem;
+    gap: var(--space-xs);
   }
 }

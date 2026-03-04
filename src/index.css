@@ -1,4 +1,17 @@
-/* Reset some default browser styles */
+/* 
+ * Medium-inspired Design System
+ * Typography: Source Serif Pro (body), Sohne/Helvetica Neue (UI)
+ * Reading width: 680px | Container: 1192px
+ */
+
+/* Google Fonts - Source Serif Pro */
+@import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&display=swap');
+
+/* Reset */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
 body, h1, h2, h3, h4, h5, h6, p, ul, ol, li, figure, figcaption, blockquote, dl, dd {
   margin: 0;
   padding: 0;
@@ -19,47 +32,166 @@ img {
   display: block;
 }
 
-body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
-  line-height: 1.6;
-  transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-/* Light Theme (Default) */
+/* Light Theme (Default) - Medium-inspired */
 :root {
-  --primary-color: #007bff;
-  --secondary-color: #6c757d;
-  --background-color: #ffffff;
-  --text-color: #212529;
-  --card-bg: #f8f9fa;
-  --border-color: #dee2e6;
-  --link-color: #0056b3;
-  --numan-color: #007bff; /* Blue for Numan */
-  --syed-color: #28a745;  /* Green for Syed */
-  --header-bg: #f8f9fa;
-  --footer-bg: #343a40;
-  --footer-text-color: #f8f9fa;
+  /* Typography */
+  --font-serif: 'Source Serif 4', 'Source Serif Pro', Georgia, 'Times New Roman', serif;
+  --font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  
+  /* Font sizes */
+  --text-xs: 13px;
+  --text-sm: 14px;
+  --text-base: 18px;
+  --text-lg: 20px;
+  --text-xl: 22px;
+  --text-2xl: 28px;
+  --text-3xl: 34px;
+  --text-4xl: 42px;
+  
+  /* Line heights */
+  --leading-tight: 1.2;
+  --leading-snug: 1.4;
+  --leading-normal: 1.6;
+  --leading-relaxed: 1.8;
+  
+  /* Colors - Light theme */
+  --color-bg: #ffffff;
+  --color-bg-elevated: #fafafa;
+  --color-bg-hover: #f2f2f2;
+  
+  --color-text-primary: #242424;
+  --color-text-secondary: #6b6b6b;
+  --color-text-tertiary: #757575;
+  
+  --color-border: rgba(0, 0, 0, 0.1);
+  --color-border-strong: rgba(0, 0, 0, 0.15);
+  
+  --color-accent: #1a8917;  /* Medium green */
+  --color-accent-hover: #156d12;
+  --color-link: #242424;
+  --color-link-hover: #1a8917;
+  
+  /* Layout */
+  --width-reading: 680px;
+  --width-container: 1192px;
+  --width-narrow: 728px;
+  
+  /* Spacing */
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --space-xl: 32px;
+  --space-2xl: 48px;
+  --space-3xl: 64px;
+  
+  /* Shadows */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.07);
+  --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+  
+  /* Transitions */
+  --transition-fast: 150ms ease;
+  --transition-normal: 250ms ease;
 }
 
-/* Dark Theme */
+/* Dark Theme - Medium-inspired */
 [data-theme="dark"] {
-  --primary-color: #0d6efd;
-  --secondary-color: #adb5bd;
-  --background-color: #1a1a1a; /* Darker background */
-  --text-color: #f8f9fa;
-  --card-bg: #2c2c2c; /* Darker card background */
-  --border-color: #495057;
-  --link-color: #6ea8fe;
-  --numan-color: #6ea8fe; /* Lighter blue for Numan in dark mode */
-  --syed-color: #52c569;  /* Lighter green for Syed in dark mode */
-  --header-bg: #212529;
-  --footer-bg: #1a1a1a;
-  --footer-text-color: #adb5bd;
+  --color-bg: #121212;
+  --color-bg-elevated: #1a1a1a;
+  --color-bg-hover: #242424;
+  
+  --color-text-primary: rgba(255, 255, 255, 0.92);
+  --color-text-secondary: rgba(255, 255, 255, 0.6);
+  --color-text-tertiary: rgba(255, 255, 255, 0.5);
+  
+  --color-border: rgba(255, 255, 255, 0.1);
+  --color-border-strong: rgba(255, 255, 255, 0.15);
+  
+  --color-accent: #1db954;  /* Slightly brighter green for dark mode */
+  --color-accent-hover: #1ed760;
+  --color-link: rgba(255, 255, 255, 0.92);
+  --color-link-hover: #1db954;
+  
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.5);
 }
 
-/* General Styles */
+/* Base styles */
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  font-family: var(--font-serif);
+  font-size: var(--text-lg);
+  line-height: var(--leading-relaxed);
+  color: var(--color-text-primary);
+  background-color: var(--color-bg);
+  transition: background-color var(--transition-normal), color var(--transition-normal);
+}
+
+/* Container utilities */
 .container {
-  max-width: 1100px;
+  max-width: var(--width-container);
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 0 var(--space-lg);
+}
+
+.container-narrow {
+  max-width: var(--width-narrow);
+  margin: 0 auto;
+  padding: 0 var(--space-lg);
+}
+
+.container-reading {
+  max-width: var(--width-reading);
+  margin: 0 auto;
+  padding: 0 var(--space-lg);
+}
+
+/* Typography utilities */
+.font-sans {
+  font-family: var(--font-sans);
+}
+
+.font-serif {
+  font-family: var(--font-serif);
+}
+
+/* Focus styles */
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+/* Selection */
+::selection {
+  background-color: var(--color-accent);
+  color: white;
+}
+
+/* Scrollbar styling for dark mode */
+[data-theme="dark"] {
+  color-scheme: dark;
+}
+
+@media (max-width: 768px) {
+  :root {
+    --text-base: 16px;
+    --text-lg: 18px;
+    --text-xl: 20px;
+    --text-2xl: 24px;
+    --text-3xl: 28px;
+    --text-4xl: 32px;
+  }
+  
+  .container,
+  .container-narrow,
+  .container-reading {
+    padding: 0 var(--space-md);
+  }
 }

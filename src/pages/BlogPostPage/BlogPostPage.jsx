@@ -244,29 +244,68 @@ gh api -X PUT repos/smnuman/dotconfig/branches/main/protection \\
 };
 
 
+const readTimes = {
+  'git-crypt-decontamination-submodule-restructure': '12 min read',
+  'building-this-website': '4 min read',
+  'importance-of-dark-mode': '5 min read',
+  'responsive-design-principles': '6 min read',
+};
+
 const BlogPostPage = () => {
   const { slug } = useParams();
   const post = blogPosts[slug];
+  const readTime = readTimes[slug] || '5 min read';
 
   if (!post) {
     return <NotFoundPage />;
   }
 
   return (
-    <div className={`${styles.blogPostPage} container`}>
+    <div className={styles.blogPostPage}>
       <article className={styles.postContent}>
-        <h1 className={styles.postTitle}>{post.title}</h1>
-        <p className={styles.postMeta}>
-          By {post.author} on {post.date}
-        </p>
+        <header className={styles.articleHeader}>
+          <h1 className={styles.postTitle}>{post.title}</h1>
+          
+          <div className={styles.authorBlock}>
+            <div className={styles.authorAvatar}>N</div>
+            <div className={styles.authorInfo}>
+              <span className={styles.authorName}>{post.author}</span>
+              <div className={styles.authorMeta}>
+                <span className={styles.publishDate}>{post.date}</span>
+                <span className={styles.metaDot}>·</span>
+                <span className={styles.readTime}>{readTime}</span>
+              </div>
+            </div>
+          </div>
+        </header>
+
         <div
           className={styles.postBody}
           dangerouslySetInnerHTML={{ __html: post.content }}
         />
+
+        <footer className={styles.articleFooter}>
+          <div className={styles.tagsSection}>
+            <span className={styles.tagLabel}>Tags:</span>
+            <span className={styles.tag}>Programming</span>
+            <span className={styles.tag}>DevOps</span>
+          </div>
+          
+          <div className={styles.authorCard}>
+            <div className={styles.authorCardAvatar}>N</div>
+            <div className={styles.authorCardInfo}>
+              <span className={styles.authorCardName}>Written by {post.author}</span>
+              <p className={styles.authorCardBio}>
+                Software engineer, writer, and chronic tinkerer. Writing about systems programming, developer tooling, and lessons from breaking things.
+              </p>
+            </div>
+          </div>
+
+          <Link to="/blog" className={styles.backLink}>
+            &larr; Back to Blog
+          </Link>
+        </footer>
       </article>
-      <Link to="/blog" className={styles.backLink}>
-        &larr; Back to Blog
-      </Link>
     </div>
   );
 };

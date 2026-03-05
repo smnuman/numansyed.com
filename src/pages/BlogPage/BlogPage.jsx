@@ -1,20 +1,32 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useSearchParams } from 'react-router-dom';
 import { blogPosts, popularPosts, allTopics } from '../../data/blogPosts';
 import styles from './BlogPage.module.css';
 
 const BlogPage = () => {
+  const [searchParams] = useSearchParams();
+  const topic = searchParams.get('topic');
+  
+  const filteredPosts = topic
+    ? blogPosts.filter(post => post.tags.includes(topic))
+    : blogPosts;
+
   return (
     <div className={styles.blogPage}>
       <div className={styles.mainContent}>
         <header className={styles.pageHeader}>
-          <h1 className={styles.pageTitle}>Stories</h1>
+          <h1 className={styles.pageTitle}>{topic ? `${topic} Stories` : 'Stories'}</h1>
           <p className={styles.pageSubtitle}>Thoughts, tutorials, and lessons learned.</p>
+          {topic && (
+            <Link to="/blog" className={styles.clearFilter}>
+              View all stories
+            </Link>
+          )}
         </header>
 
         <div className={styles.postList}>
-          {blogPosts.length > 0 ? (
-            blogPosts.map((post) => (
+          {filteredPosts.length > 0 ? (
+            filteredPosts.map((post) => (
               <article key={post.slug} className={styles.postItem}>
                 <div className={styles.postMeta}>
                   <span className={styles.authorName}>Numan Syed</span>
@@ -33,7 +45,9 @@ const BlogPage = () => {
                 <div className={styles.postFooter}>
                   <div className={styles.tags}>
                     {post.tags.map((tag) => (
-                      <span key={tag} className={styles.tag}>{tag}</span>
+                      <Link key={tag} to={`/blog?topic=${encodeURIComponent(tag)}`} className={styles.tag}>
+                        {tag}
+                      </Link>
                     ))}
                   </div>
                   <Link to={`/blog/${post.slug}`} className={styles.readMoreLink}>
@@ -43,7 +57,9 @@ const BlogPage = () => {
               </article>
             ))
           ) : (
-            <p className={styles.noPosts}>No blog posts yet. Check back soon!</p>
+            <p className={styles.noPosts}>
+              {topic ? `No stories found for "${topic}".` : 'No blog posts yet. Check back soon!'}
+            </p>
           )}
         </div>
       </div>

@@ -1,5 +1,6 @@
 import React from 'react';
 import { useParams, Link } from 'react-router-dom';
+import { blogPosts as blogPostsData } from '../../data/blogPosts';
 import styles from './BlogPostPage.module.css';
 import NotFoundPage from '../NotFoundPage/NotFoundPage';
 
@@ -255,6 +256,8 @@ const BlogPostPage = () => {
   const { slug } = useParams();
   const post = blogPosts[slug];
   const readTime = readTimes[slug] || '5 min read';
+  const postData = blogPostsData.find(p => p.slug === slug);
+  const tags = postData?.tags || [];
 
   if (!post) {
     return <NotFoundPage />;
@@ -287,8 +290,11 @@ const BlogPostPage = () => {
         <footer className={styles.articleFooter}>
           <div className={styles.tagsSection}>
             <span className={styles.tagLabel}>Tags:</span>
-            <span className={styles.tag}>Programming</span>
-            <span className={styles.tag}>DevOps</span>
+            {tags.map(tag => (
+              <Link key={tag} to={`/blog?topic=${encodeURIComponent(tag)}`} className={styles.tag}>
+                {tag}
+              </Link>
+            ))}
           </div>
           
           <div className={styles.authorCard}>

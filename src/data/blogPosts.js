@@ -6,6 +6,7 @@ export const blogPosts = [
     readTime: '12 min read',
     excerpt: 'A war story about git-crypt encrypting its own infrastructure files, a phantom self-referencing submodule, and three phases of surgical repair across five interconnected repositories.',
     tags: ['Git', 'DevOps', 'Systems'],
+    content: 'git-crypt encrypting its own infrastructure files. phantom submodule pointing at itself. self-reinforcing poison loop. git attributes encrypting itself. circular dependency. dotfiles management. zsh utilities grepo gsub gsync. submodule restructure. branch remote cleanup. encryption decontamination. The fix was surgical. removed poisoned patterns from .gitcrypt. cleaned .gitattributes. gencrypt_setup function. _grepo_name generates repository names. parent-child format collision. config-zsh naming collision. _gisolate function. corrupted .gitignore. brew directory. detached HEAD states. git submodule update. main branch. push force. branch protection. GitHub. lessons learned.',
   },
   {
     slug: 'building-this-website',
@@ -14,6 +15,7 @@ export const blogPosts = [
     readTime: '4 min read',
     excerpt: 'A quick look into the tools and techniques used to create numansyed.com, including React for the UI, Vite for the build tool, and a custom theme system.',
     tags: ['React', 'Web Dev', 'Tutorial'],
+    content: 'React Vite. React Router. CSS Modules. dark light theme. CSS custom properties. local storage. theme toggle. personal website. modern JavaScript stack. frontend tooling. component based architecture. reusable UI elements. responsive design.',
   },
   {
     slug: 'importance-of-dark-mode',
@@ -22,6 +24,7 @@ export const blogPosts = [
     readTime: '5 min read',
     excerpt: 'Why every modern website should consider a dark theme option for user comfort, accessibility, and aesthetic appeal.',
     tags: ['Design', 'UX', 'Accessibility'],
+    content: 'dark mode. eye strain. low-light environments. readability. OLED AMOLED screens. battery savings. aesthetic appeal. modern web design. accessibility. visual impairments. photophobia. user experience. CSS custom properties.',
   },
   {
     slug: 'responsive-design-principles',
@@ -30,6 +33,7 @@ export const blogPosts = [
     readTime: '6 min read',
     excerpt: 'Ensuring your website looks and functions great on all devices, from desktops to smartphones, is crucial. Here are some key principles.',
     tags: ['Design', 'CSS', 'Mobile'],
+    content: 'responsive web design. RWD. fluid grids. flexible images. media queries. mobile-first approach. content prioritization. relative units. percentages. max-width. screen sizes. devices. tablets. phones. desktop. breakpoints.',
   },
 ];
 

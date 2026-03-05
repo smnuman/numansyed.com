@@ -72,6 +72,17 @@ src/
 └── index.css
 ```
 
+## Screenshots
+
+### Homepage
+![Homepage](./screenshots/homepage.png)
+
+### Blog Page
+![Blog](./screenshots/blog.png)
+
+### Blog Post
+![Blog Post](./screenshots/blog-post.png)
+
 ## Deployment
 
 The site automatically deploys to [numansyed.com](https://numansyed.com) when changes are pushed to the `main` branch.
@@ -89,7 +100,7 @@ A revert branch `pre-medium-style-redesign` exists for rolling back the Medium-s
 
 ## Remaining Work
 
-See [ATES.md](./PENDING-UPDPENDING-UPDATES.md) for a list of incomplete features and known issues.
+See [PENDING-UPDATES.md](./PENDING-UPDATES.md) for a list of incomplete features and known issues.
 
 ## License
 

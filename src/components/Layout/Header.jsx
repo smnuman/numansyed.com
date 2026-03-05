@@ -57,9 +57,10 @@ const Header = ({ toggleTheme, currentTheme }) => {
       .map(post => {
         const titleMatch = fuzzyMatch(post.title, query);
         const excerptMatch = fuzzyMatch(post.excerpt, query);
+        const contentMatch = post.content ? fuzzyMatch(post.content, query) : { score: 0 };
         const tagMatch = post.tags.some(tag => fuzzyMatch(tag, query).match);
         
-        const maxScore = Math.max(titleMatch.score, excerptMatch.score);
+        const maxScore = Math.max(titleMatch.score, excerptMatch.score, contentMatch.score);
         
         return {
           ...post,
@@ -206,6 +207,23 @@ const Header = ({ toggleTheme, currentTheme }) => {
                         <span>·</span>
                         <span>{post.readTime}</span>
                       </div>
+                      {post.tags && post.tags.length > 0 && (
+                        <div className={styles.searchResultTags}>
+                          {post.tags.map(tag => (
+                            <Link
+                              key={tag}
+                              to={`/blog?topic=${encodeURIComponent(tag)}`}
+                              className={styles.searchResultTag}
+                              onClick={(e) => {
+                                e.stopPropagation();
+                                closeSearch();
+                              }}
+                            >
+                              {tag}
+                            </Link>
+                          ))}
+                        </div>
+                      )}
                     </Link>
                   ))}
                 </div>

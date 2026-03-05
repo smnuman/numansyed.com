@@ -316,3 +316,25 @@
   display: flex;
   gap: 6px;
 }
+
+.searchResultTags {
+  display: flex;
+  gap: 6px;
+  margin-top: 8px;
+  flex-wrap: wrap;
+}
+
+.searchResultTag {
+  font-size: 0.7rem;
+  padding: 2px 8px;
+  background-color: var(--color-bg-hover);
+  border-radius: 12px;
+  color: var(--color-text-secondary);
+  text-decoration: none;
+  transition: all var(--transition-fast);
+}
+
+.searchResultTag:hover {
+  background-color: var(--color-accent);
+  color: white;
+}

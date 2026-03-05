@@ -39,7 +39,9 @@ const HomePage = () => {
                 </Link>
                 <div className={styles.topicTags}>
                   {post.tags && post.tags.slice(0, 2).map(tag => (
-                    <span key={tag} className={styles.topicTag}>{tag}</span>
+                    <Link key={tag} to={`/blog?topic=${encodeURIComponent(tag)}`} className={styles.topicTag}>
+                      {tag}
+                    </Link>
                   ))}
                 </div>
               </div>

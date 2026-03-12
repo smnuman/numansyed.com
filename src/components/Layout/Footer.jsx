@@ -30,8 +30,9 @@ const Footer = () => {
               <h4 className={styles.sectionTitle}>Read</h4>
               <ul className={styles.footerList}>
                 <li><Link to="/blog" className={styles.footerLink}>Blog</Link></li>
+                <li><Link to="/garden" className={styles.footerLink}>Digital Garden</Link></li>
+                <li><Link to="/til" className={styles.footerLink}>Today I Learned</Link></li>
                 <li><Link to="/reviews" className={styles.footerLink}>Reviews</Link></li>
-                <li><Link to="/about" className={styles.footerLink}>About</Link></li>
               </ul>
             </div>
             

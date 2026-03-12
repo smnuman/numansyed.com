@@ -1,0 +1,390 @@
+/* Page Layout — mirrors BlogPostPage */
+.gardenNotePage {
+  padding: var(--space-2xl) 0 var(--space-3xl);
+}
+
+.noteContent {
+  max-width: 740px;
+  margin: 0 auto;
+  padding: 0 var(--space-lg);
+}
+
+/* Note Header */
+.noteHeader {
+  margin-bottom: var(--space-2xl);
+  padding-bottom: var(--space-xl);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.noteTitle {
+  font-family: var(--font-serif);
+  font-size: var(--text-4xl);
+  font-weight: 700;
+  color: var(--color-text-primary);
+  line-height: var(--leading-tight);
+  letter-spacing: -0.5px;
+  margin-bottom: var(--space-lg);
+}
+
+/* Status Badge */
+.statusBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: var(--space-xs) var(--space-md);
+  border-radius: 99px;
+  font-family: var(--font-sans);
+  font-size: var(--text-sm);
+  margin-bottom: var(--space-lg);
+  border: 1px solid var(--_badge-border, var(--color-border));
+  background-color: var(--_badge-bg, var(--color-bg-elevated));
+  color: var(--_badge-color, var(--color-text-secondary));
+}
+
+.statusEmoji {
+  font-size: var(--text-base);
+  line-height: 1;
+}
+
+.statusLabel {
+  font-weight: 600;
+}
+
+.statusSep {
+  color: var(--_badge-color, var(--color-text-tertiary));
+  opacity: 0.6;
+}
+
+.statusDesc {
+  font-weight: 400;
+}
+
+/* Status-specific badge colors (component-scoped custom properties) */
+.seedling {
+  --_badge-bg: rgba(26, 137, 23, 0.07);
+  --_badge-border: rgba(26, 137, 23, 0.18);
+  --_badge-color: #2e8b2a;
+}
+
+.budding {
+  --_badge-bg: rgba(180, 150, 0, 0.07);
+  --_badge-border: rgba(180, 150, 0, 0.18);
+  --_badge-color: #8a7500;
+}
+
+.evergreen {
+  --_badge-bg: rgba(21, 109, 18, 0.12);
+  --_badge-border: rgba(21, 109, 18, 0.22);
+  --_badge-color: #156d12;
+}
+
+[data-theme="dark"] .seedling {
+  --_badge-bg: rgba(29, 185, 84, 0.1);
+  --_badge-border: rgba(29, 185, 84, 0.2);
+  --_badge-color: #4eca6a;
+}
+
+[data-theme="dark"] .budding {
+  --_badge-bg: rgba(230, 195, 40, 0.1);
+  --_badge-border: rgba(230, 195, 40, 0.2);
+  --_badge-color: #e0c040;
+}
+
+[data-theme="dark"] .evergreen {
+  --_badge-bg: rgba(29, 185, 84, 0.15);
+  --_badge-border: rgba(29, 185, 84, 0.25);
+  --_badge-color: #3ddb64;
+}
+
+/* Meta Line */
+.metaLine {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  font-family: var(--font-sans);
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
+}
+
+.metaDot {
+  color: var(--color-text-tertiary);
+}
+
+/* Note Body — matches BlogPostPage .postBody */
+.noteBody {
+  font-family: var(--font-serif);
+  font-size: var(--text-lg);
+  line-height: var(--leading-relaxed);
+  color: var(--color-text-primary);
+}
+
+.noteBody p {
+  margin-top: var(--space-xl);
+}
+
+.noteBody p:first-child {
+  margin-top: 0;
+}
+
+.noteBody h2 {
+  font-family: var(--font-sans);
+  font-size: var(--text-2xl);
+  font-weight: 700;
+  color: var(--color-text-primary);
+  margin-top: var(--space-3xl);
+  margin-bottom: var(--space-md);
+  letter-spacing: -0.3px;
+  line-height: var(--leading-snug);
+}
+
+.noteBody h3 {
+  font-family: var(--font-sans);
+  font-size: var(--text-xl);
+  font-weight: 600;
+  color: var(--color-text-primary);
+  margin-top: var(--space-2xl);
+  margin-bottom: var(--space-md);
+  line-height: var(--leading-snug);
+}
+
+.noteBody ul,
+.noteBody ol {
+  margin-top: var(--space-xl);
+  padding-left: var(--space-xl);
+}
+
+.noteBody ul {
+  list-style-type: disc;
+}
+
+.noteBody ol {
+  list-style-type: decimal;
+}
+
+.noteBody li {
+  margin-bottom: var(--space-sm);
+  padding-left: var(--space-sm);
+}
+
+.noteBody li::marker {
+  color: var(--color-text-tertiary);
+}
+
+.noteBody a {
+  color: var(--color-text-primary);
+  text-decoration: underline;
+  text-decoration-color: var(--color-text-tertiary);
+  text-underline-offset: 3px;
+  transition: text-decoration-color var(--transition-fast);
+}
+
+.noteBody a:hover {
+  text-decoration-color: var(--color-accent);
+}
+
+.noteBody blockquote {
+  margin: var(--space-xl) 0;
+  padding-left: var(--space-lg);
+  border-left: 3px solid var(--color-text-primary);
+  font-style: italic;
+  color: var(--color-text-secondary);
+}
+
+.noteBody blockquote strong {
+  font-style: normal;
+  color: var(--color-text-primary);
+}
+
+.noteBody code {
+  font-family: 'SF Mono', 'Fira Code', 'Consolas', monospace;
+  font-size: 0.9em;
+  background-color: var(--color-bg-elevated);
+  padding: 2px 6px;
+  border-radius: 3px;
+  color: var(--color-text-primary);
+}
+
+.noteBody pre {
+  margin: var(--space-xl) 0;
+  padding: var(--space-lg);
+  background-color: var(--color-bg-elevated);
+  border-radius: 4px;
+  overflow-x: auto;
+  border: 1px solid var(--color-border);
+}
+
+[data-theme="dark"] .noteBody pre {
+  background-color: #1e1e1e;
+}
+
+.noteBody pre code {
+  background: transparent;
+  padding: 0;
+  font-size: var(--text-sm);
+  line-height: 1.6;
+  color: var(--color-text-primary);
+}
+
+.noteBody img {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  border-radius: 4px;
+  margin: var(--space-xl) 0;
+}
+
+.noteBody hr {
+  border: none;
+  text-align: center;
+  margin: var(--space-2xl) 0;
+}
+
+.noteBody hr::before {
+  content: '···';
+  font-size: var(--text-2xl);
+  letter-spacing: 1em;
+  color: var(--color-text-tertiary);
+}
+
+/* Note Footer */
+.noteFooter {
+  margin-top: var(--space-3xl);
+  padding-top: var(--space-2xl);
+  border-top: 1px solid var(--color-border);
+}
+
+/* Tags */
+.tagsSection {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-2xl);
+}
+
+.tag {
+  font-family: var(--font-sans);
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
+  background-color: var(--color-bg-elevated);
+  padding: 4px 12px;
+  border-radius: 99px;
+  border: 1px solid var(--color-border);
+  transition: color var(--transition-fast), border-color var(--transition-fast);
+}
+
+.tag:hover {
+  color: var(--color-accent);
+  border-color: var(--color-border-strong);
+}
+
+/* Connected Notes */
+.connectionsSection {
+  margin-bottom: var(--space-2xl);
+}
+
+.connectionsTitle {
+  font-family: var(--font-sans);
+  font-size: var(--text-base);
+  font-weight: 600;
+  color: var(--color-text-primary);
+  margin-bottom: var(--space-md);
+}
+
+.connectionsList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.connectionCard {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-md);
+  padding: var(--space-md);
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  text-decoration: none;
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.connectionCard:hover {
+  border-color: var(--color-border-strong);
+  box-shadow: var(--shadow-sm);
+}
+
+.connectionEmoji {
+  font-size: var(--text-xl);
+  line-height: 1.3;
+  flex-shrink: 0;
+}
+
+.connectionInfo {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+  min-width: 0;
+}
+
+.connectionTitle {
+  font-family: var(--font-sans);
+  font-size: var(--text-base);
+  font-weight: 600;
+  color: var(--color-text-primary);
+}
+
+.connectionExcerpt {
+  font-family: var(--font-sans);
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
+  line-height: var(--leading-normal);
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Back Link */
+.backLink {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-sm);
+  font-family: var(--font-sans);
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+.backLink:hover {
+  color: var(--color-accent);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .gardenNotePage {
+    padding: var(--space-xl) 0 var(--space-2xl);
+  }
+
+  .noteTitle {
+    font-size: var(--text-3xl);
+  }
+
+  .metaLine {
+    flex-wrap: wrap;
+  }
+
+  .noteBody {
+    font-size: var(--text-base);
+  }
+
+  .noteBody h2 {
+    font-size: var(--text-xl);
+    margin-top: var(--space-2xl);
+  }
+
+  .noteBody h3 {
+    font-size: var(--text-lg);
+    margin-top: var(--space-xl);
+  }
+}

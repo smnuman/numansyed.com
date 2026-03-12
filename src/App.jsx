@@ -5,6 +5,9 @@ import Footer from './components/Layout/Footer';
 import HomePage from './pages/HomePage/HomePage';
 import BlogPage from './pages/BlogPage/BlogPage';
 import BlogPostPage from './pages/BlogPostPage/BlogPostPage';
+import GardenPage from './pages/GardenPage/GardenPage';
+import GardenNotePage from './pages/GardenNotePage/GardenNotePage';
+import TILPage from './pages/TILPage/TILPage';
 import ReviewsPage from './pages/ReviewsPage/ReviewsPage';
 import AboutPage from './pages/AboutPage/AboutPage';
 import NotFoundPage from './pages/NotFoundPage/NotFoundPage';
@@ -34,6 +37,9 @@ function App() {
             <Route path="/" element={<HomePage />} />
             <Route path="/blog" element={<BlogPage />} />
             <Route path="/blog/:slug" element={<BlogPostPage />} />
+            <Route path="/garden" element={<GardenPage />} />
+            <Route path="/garden/:slug" element={<GardenNotePage />} />
+            <Route path="/til" element={<TILPage />} />
             <Route path="/reviews" element={<ReviewsPage />} />
             <Route path="/about" element={<AboutPage />} />
             <Route path="*" element={<NotFoundPage />} />

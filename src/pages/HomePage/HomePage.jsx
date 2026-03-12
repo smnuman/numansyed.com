@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { blogPosts } from '../../data/blogPosts';
+import { gardenNotes, statusInfo } from '../../data/gardenNotes';
+import { tilEntries } from '../../data/tilEntries';
 import styles from './HomePage.module.css';
 
 const HomePage = () => {
@@ -51,6 +53,43 @@ const HomePage = () => {
 
         <Link to="/blog" className={styles.viewAllPosts}>
           View all stories
+        </Link>
+      </section>
+
+      <section className={styles.mainContent}>
+        <h2 className={styles.sectionTitle}>From the Garden</h2>
+        
+        <div className={styles.gardenGrid}>
+          {gardenNotes.slice(0, 3).map((note) => (
+            <Link key={note.slug} to={`/garden/${note.slug}`} className={styles.gardenCard}>
+              <span className={styles.gardenStatus}>
+                {statusInfo[note.status].emoji} {statusInfo[note.status].label}
+              </span>
+              <h3 className={styles.gardenCardTitle}>{note.title}</h3>
+              <p className={styles.gardenCardExcerpt}>{note.excerpt}</p>
+            </Link>
+          ))}
+        </div>
+
+        <Link to="/garden" className={styles.viewAllPosts}>
+          Explore the garden
+        </Link>
+      </section>
+
+      <section className={styles.mainContent}>
+        <h2 className={styles.sectionTitle}>Recently Learned</h2>
+        
+        <div className={styles.tilList}>
+          {tilEntries.slice(0, 3).map((entry) => (
+            <div key={entry.id} className={styles.tilEntry}>
+              <span className={styles.tilDate}>{entry.date}</span>
+              <h3 className={styles.tilTitle}>{entry.title}</h3>
+            </div>
+          ))}
+        </div>
+
+        <Link to="/til" className={styles.viewAllPosts}>
+          View all TILs
         </Link>
       </section>
     </div>

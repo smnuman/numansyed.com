@@ -162,6 +162,22 @@ const Header = ({ toggleTheme, currentTheme }) => {
               Blog
             </Link>
             <Link 
+              to="/garden" 
+              className={styles.navLink} 
+              onClick={closeMenu}
+              style={isActive('/garden') || location.pathname.startsWith('/garden/') ? { color: 'var(--color-text-primary)' } : {}}
+            >
+              Garden
+            </Link>
+            <Link 
+              to="/til" 
+              className={styles.navLink} 
+              onClick={closeMenu}
+              style={isActive('/til') ? { color: 'var(--color-text-primary)' } : {}}
+            >
+              TIL
+            </Link>
+            <Link 
               to="/reviews" 
               className={styles.navLink} 
               onClick={closeMenu}

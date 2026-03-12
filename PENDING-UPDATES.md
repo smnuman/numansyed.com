@@ -13,7 +13,7 @@
 - [ ] **Help page** - Need a help page or remove link
 
 ### BlogPage
-- [ ] **Topic filtering** - Links go to `/blog?topic=X` but filtering isn't implemented
+- [x] **Topic filtering** - ~~Links go to `/blog?topic=X` but filtering isn't implemented~~ Done
 - [ ] **Popular reads** - Hardcoded "2.4k reads" - should be dynamic or removed
 
 ## Medium Priority

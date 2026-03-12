@@ -7,9 +7,12 @@ A personal blog and portfolio website inspired by Medium.com's clean, minimalist
 - Medium-inspired reading experience with clean typography
 - Dark/Light theme support
 - Blog posts with reading time estimates
+- **Digital Garden** — evolving notes with maturity stages (seedling/budding/evergreen), connected notes, and topic filtering
+- **Today I Learned (TIL)** — bite-sized daily learning entries with inline code rendering and topic filtering
+- Fuzzy search across titles, excerpts, content, and tags
+- Clickable topic tags with filtering across all sections
 - Responsive design for all devices
 - Author bio sections
-- Topic-based content organization
 
 ## Tech Stack
 
@@ -55,18 +58,23 @@ npm run preview
 ```
 src/
 ├── components/
-│   ├── Layout/
-│   │   ├── Header.jsx
-│   │   ├── Footer.jsx
-│   │   └── Layout.jsx
-│   └── ui/
+│   └── Layout/
+│       ├── Header.jsx
+│       └── Footer.jsx
+├── data/
+│   ├── blogPosts.js
+│   ├── gardenNotes.js
+│   └── tilEntries.js
 ├── pages/
 │   ├── HomePage/
 │   ├── BlogPage/
 │   ├── BlogPostPage/
-│   └── ReviewsPage/
-├── styles/
-│   └── design-tokens.css
+│   ├── GardenPage/
+│   ├── GardenNotePage/
+│   ├── TILPage/
+│   ├── ReviewsPage/
+│   ├── AboutPage/
+│   └── NotFoundPage/
 ├── App.jsx
 ├── main.jsx
 └── index.css
@@ -97,6 +105,28 @@ npm run build
 ## Revert Branch
 
 A revert branch `pre-medium-style-redesign` exists for rolling back the Medium-style redesign if needed.
+
+## Changelog
+
+### 2026-03-12 — Digital Garden & TIL
+- Added Digital Garden section (`/garden`) with card grid, maturity status badges, and dual filtering (status + topic)
+- Added Garden Note detail pages (`/garden/:slug`) with connected notes, maturity indicators, and reading layout
+- Added Today I Learned section (`/til`) with reverse-chronological entries, inline code rendering, and topic filtering
+- Updated homepage with "From the Garden" and "Recently Learned" preview sections
+- Updated header and footer navigation with new section links
+
+### 2026-02 — Search & Tags
+- Inline expandable fuzzy search in header (PR #6, #7)
+- Clickable tags across all pages with topic filtering via `/blog?topic=X`
+- Search covers titles, excerpts, content, and tags
+
+### 2026-02 — Medium-Style Redesign
+- Complete visual redesign inspired by Medium.com (PR #5)
+- Two-tone "Numan Syed" logo, hero section, post cards
+- Blog page with sidebar (popular posts, topic discovery)
+- Blog post page with author block, reading time, author card
+- Rich footer with section links
+- Dark/Light theme with CSS custom properties
 
 ## Remaining Work
 
